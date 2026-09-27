@@ -15,9 +15,18 @@ observability to know they are working.
 
 ## Install
 
+Not published to npm yet — install from the repository:
+
 ```bash
-npm install connector-kit
+git clone https://github.com/Geomanti/connector-kit.git
+cd connector-kit
+npm ci
+npm test
 ```
+
+(There is an unrelated package occupying the `connector-kit` name on the public
+registry; this library is distributed from GitHub until it has its own scope.)
+
 Node 18+ (uses native `fetch`, `AbortController`, `node:crypto`).
 
 ## Quick start
