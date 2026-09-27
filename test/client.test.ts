@@ -5,7 +5,7 @@ import {
   CircuitOpenError,
   RateLimitError,
   HttpStatusError,
-} from "../dist/index.js";
+} from "../src/index.js";
 
 /** Build a fake fetch that returns a scripted sequence of responses. */
 function scriptedFetch(script: Array<() => Response | Promise<Response>>) {

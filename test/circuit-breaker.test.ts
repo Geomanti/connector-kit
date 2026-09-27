@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { CircuitBreaker, CircuitOpenError } from "../dist/index.js";
+import { CircuitBreaker, CircuitOpenError } from "../src/index.js";
 
 /** Deterministic clock so breaker timing is testable without real waits. */
 function clock() {

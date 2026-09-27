@@ -9,7 +9,7 @@ import {
   TimeoutError,
   CircuitOpenError,
   RateLimitError,
-} from "../dist/index.js";
+} from "../src/index.js";
 
 const noSleep = async () => {};
 

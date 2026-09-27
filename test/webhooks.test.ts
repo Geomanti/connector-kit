@@ -6,7 +6,7 @@ import {
   parseSignatureHeader,
   ReplayGuard,
   SignatureVerificationError,
-} from "../dist/index.js";
+} from "../src/index.js";
 
 const SECRET = "whsec_test_secret";
 const BODY = JSON.stringify({ event: "device.connected", id: "evt_1" });

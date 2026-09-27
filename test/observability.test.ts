@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { TokenBucket, Counter, Histogram, Registry } from "../dist/index.js";
+import { TokenBucket, Counter, Histogram, Registry } from "../src/index.js";
 
 test("rate limiter: permits an initial burst up to the bucket size", async () => {
   const tb = new TokenBucket({ ratePerSecond: 2, burst: 3, now: () => 0, sleep: async () => {} });
