@@ -1,5 +1,5 @@
 {
-  "name": "connector-kit",
+  "name": "@geomanti/connector-kit",
   "version": "0.1.0",
   "description": "Reliability primitives for third-party API integrations: retry with jittered backoff, circuit breaker, token-bucket rate limiting, webhook signature verification, and Prometheus metrics.",
   "license": "MIT",

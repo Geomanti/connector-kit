@@ -15,24 +15,40 @@ observability to know they are working.
 
 ## Install
 
-Not published to npm yet — install from the repository:
+**Not published to npm.** Install directly from the repository:
+
+```bash
+npm install github:Geomanti/connector-kit
+```
+
+The package declares the scope `@geomanti/connector-kit`, so imports are
+unambiguous:
+
+```ts
+import { ResilientClient } from "@geomanti/connector-kit";
+```
+
+Why the scope: the unscoped name `connector-kit` on the public npm registry is an
+**unrelated Solana package**. Publishing under a bare name this library does not
+own would either collide with it or invite a typo-squat, so the scope is the
+honest choice — and every import example below matches what actually resolves.
+
+To work on the library itself:
 
 ```bash
 git clone https://github.com/Geomanti/connector-kit.git
 cd connector-kit
 npm ci
+npm run build
 npm test
 ```
-
-(There is an unrelated package occupying the `connector-kit` name on the public
-registry; this library is distributed from GitHub until it has its own scope.)
 
 Node 18+ (uses native `fetch`, `AbortController`, `node:crypto`).
 
 ## Quick start
 
 ```ts
-import { ResilientClient } from "connector-kit";
+import { ResilientClient } from "@geomanti/connector-kit";
 
 const client = new ResilientClient({
   timeoutMs: 10_000,
@@ -106,7 +122,7 @@ Anyone who knows the URL can POST to it. The signature covers
 tolerance window:
 
 ```ts
-import { verifyWebhook, ReplayGuard } from "connector-kit";
+import { verifyWebhook, ReplayGuard } from "@geomanti/connector-kit";
 
 const guard = new ReplayGuard();
 
@@ -128,7 +144,7 @@ app.post("/webhook", (req, res) => {
 ### Metrics without a dependency
 
 ```ts
-import { Counter, Histogram, Registry } from "connector-kit";
+import { Counter, Histogram, Registry } from "@geomanti/connector-kit";
 
 const registry = new Registry();
 const requests = registry.register(
